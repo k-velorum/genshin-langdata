@@ -94,6 +94,8 @@ $ pnpm run lint
 
 `pnpm run todo` lists the words without Chinese translation.
 
+`pnpm run export:google-ime` exports a TSV dictionary for Google Japanese Input (Google IME). The output is generated at `dist/google-ime.tsv` with columns: 読み, 単語, 品詞 (using 名詞).
+
 Example:
 
 ```shell
