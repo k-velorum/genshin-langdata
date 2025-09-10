@@ -6,6 +6,7 @@
   "scripts": {
     "build": "jiti scripts/build-prep.ts && jiti scripts/build-release.ts",
     "todo": "jiti scripts/todo.ts",
+    "export:google-ime": "jiti scripts/export-google-ime.ts",
     "test": "pnpm build && vitest run",
     "lint": "pnpm build && tsc --noEmit",
     "release": "./scripts/release.sh",
