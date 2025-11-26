@@ -623,7 +623,7 @@ export default [
     ja: "「ムーナタ」",
     zhCN: "穆纳塔",
     zhTW: "穆納塔",
-    notes: "世界任務「最後のテノチズトク人」で淵上から語られた情報でテノチズトク人の末裔。日本語ではムー「ナ」タ表記だが英語ではMu\"ra\"tans 表記で、原神セレベンツ(漫画)のムラタ人と同一民族の可能性がある",
+    notes: "世界任務「最後のテノチズトク人」で淵上から語られた情報でテノチズトク人の末裔。原神セレベンツ(漫画)のムーナタ人と同一民族",
     tags: [ "natlan", "organization" ],
   },
 
@@ -631,28 +631,10 @@ export default [
   // Nod-Krai
   //
   {
-    en: "Voynich Guild",
-    ja: "ヴォイニッチ商会",
-    zhCN: "伏尼契商会",
-    zhTW: "伏尼契商會",
-    pronunciationJa: "ヴォイニッチしょうかい",
-    tags: [ "nodkrai", "organization" ],
-    notes: "v5.1 期間限定イベント「百貨珍品」の中で、商人の立本からもたらされた情報",
-  },
-  {
     en: "LightKeepers",
     ja: "ライトキーバー",
     zhCN: "执灯人",
     zhTW: "執燈人",
-    notes: "期間限定Webイベント「空月の空」の情報",
-    tags: [ "nodkrai", "organization" ],
-  },
-  {
-    en: "The Wild Hunt",
-    ja: "ワイルドハント",
-    zhCN: "狂猎",
-    zhTW: "狂獵",
-    notes: "アビスの軍勢。期間限定Webイベント「空月の空」の情報",
     tags: [ "nodkrai", "organization" ],
   },
   {
@@ -661,8 +643,7 @@ export default [
     zhCN: "霜月之子",
     zhTW: "霜月之子",
     pronunciationJa: "しもつきのこ",
-    notes: "期間限定Webイベント「空月の空」の情報",
-    tags: [ "nodkrai" ],
+    tags: [ "nodkrai", "organization" ],
   },
 
   //
@@ -682,8 +663,16 @@ export default [
     ja: "黒日",
     zhCN: "黑日",
     zhTW: "黑日",
-    pronunciationJa: "こくじつ", // TODO Need Check
+    pronunciationJa: "こくじつ",
     tags: [ "khaenriah", "organization" ],
     notes: "カールンイアの古代王朝",
+  },
+  {
+    en: "Universitas Magistrorum",
+    ja: "深秘院",
+    zhCN: "深秘院",
+    zhTW: "深秘院",
+    pronunciationJa: "しんぴいん",  // Notes: 魔人任務「消えた月光に思いを馳せて」でのレインドットやソリンディスの発音より
+    tags: [ "khaenriah", "organization" ],
   },
 ] as const satisfies SourceWord[];

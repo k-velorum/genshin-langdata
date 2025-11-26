@@ -344,6 +344,22 @@ export default [
     notes: "v5.2 期間限定イベント「スピリットを求めしウォーベン」報酬",
     notesZh: "v5.2 限时活动「暝视寻灵织卷」奖励",
   },
+  {
+    en: "Moonweaver's Dawn",
+    ja: "月紡ぎの曙光",
+    zhCN: "织月者的曙色",
+    zhTW: "織月者的曙色",
+    pronunciationJa: "つきつむぎのしょこう",  // TODO Need Check
+    tags: [ "weapon", "sword" ],
+  },
+  {
+    en: "Serenity's Call",
+    ja: "静謐の笛",
+    zhCN: "谧音吹哨",
+    zhTW: "謐音吹哨",
+    pronunciationJa: "せいひつのふえ",
+    tags: [ "weapon", "sword" ],
+  },
   // ★5
   {
     en: "Aquila Favonia",
@@ -751,6 +767,14 @@ export default [
     notes: "v5.8 期間限定イベント「染夏! 烈日? リゾート満喫!」報酬",
     notesZh: "v5.8 活动「绘夏! 烈日? 度假村」奖励",
   },
+  {
+    en: "Master Key",
+    ja: "万能の鍵",
+    zhCN: "万能钥匙",
+    zhTW: "萬能鑰匙",
+    pronunciationJa: "ばんのうのかぎ",
+    tags: [ "weapon", "claymore" ],
+  },
   // ★5
   {
     en: "Skyward Pride",
@@ -1087,6 +1111,14 @@ export default [
     notes: "v5.4 期間限定イベント「三川遊芸夢綺譚」報酬",
     notesZh: "v5.4 活动「三川游艺绮梦谭」奖励",
   },
+  {
+    en: "Prospector's Shovel",
+    ja: "金堀のシャベル",
+    zhCN: "掘金之锹",
+    zhTW: "掘金之鍬",
+    pronunciationJa: "きんぼりのシャベル",  // TODO Need Check
+    tags: [ "weapon", "polearm" ],
+  },
   // ★5
   {
     en: "Primordial Jade Winged-Spear",
@@ -1203,6 +1235,14 @@ export default [
     zhCN: "支离轮光",
     zhTW: "支離輪光",
     pronunciationJa: "くだけちるこうりん",
+    tags: [ "weapon", "polearm" ],
+  },
+  {
+    en: "Bloodsoaked Ruins",
+    ja: "血染めの荒れ地",
+    zhCN: "血染荒城",
+    zhTW: "血染荒城",
+    pronunciationJa: "ちぞめのあれち",
     tags: [ "weapon", "polearm" ],
   },
 
@@ -1497,7 +1537,14 @@ export default [
     notesEn: "v5.6 Limited Time Event \"Whirling Waltz\" Reward",
     notes: "v5.6 期間限定イベント「ハーモニック・ワルツ」報酬",
     notesZh: "v5.6 限时活动「和旋舞剧」奖励",
-
+    tags: [ "weapon", "bow" ],
+  },
+  {
+    en: "Snare Hook",
+    ja: "羅網の針",
+    zhCN: "罗网勾針",
+    zhTW: "羅網勾針",
+    pronunciationJa: "らもうのはり",
     tags: [ "weapon", "bow" ],
   },
   // ★5
@@ -1866,6 +1913,25 @@ export default [
     pronunciationJa: "なみのりのせんかい",
     tags: [ "weapon", "catalyst" ],
   },
+  {
+    en: "Etherlight Spindlelute",
+    ja: "天光のリュート",
+    zhCN: "天光的纺琴",
+    zhTW: "天光的紡琴",
+    pronunciationJa: "てんこうのリュート",
+    notesEn: "v6.0 Limited Time Event \"Clink Clank Clash\" Reward",
+    notes: "v6.0 期間限定イベント「カチャカチャ大作戦」報酬",
+    notesZh: "v6.0 活动「叮铃哐啷大作战」奖励",
+    tags: [ "weapon", "catalyst", "event" ],
+  },
+  {
+    en: "Blackmarrow Lantern",
+    ja: "鳥髄の狐灯",
+    zhCN: "鸟髄孑灯",
+    zhTW: "鳥髄孑燈",
+    pronunciationJa: "ちょうずいのことう",
+    tags: [ "weapon", "catalyst" ],
+  },
   // ★5
   {
     en: "Skyward Atlas",
@@ -1994,6 +2060,22 @@ export default [
     ja: "ヴィヴィッド・ハート",
     zhCN: "溢彩心念",
     zhTW: "溢彩心念",
+    tags: [ "weapon", "catalyst" ],
+  },
+  {
+    en: "Nightweaver's Looking Glass",
+    ja: "夜を紡ぐ天鏡",
+    zhCN: "纺夜天镜",
+    zhTW: "紡夜天鏡",
+    pronunciationJa: "よるをつむぐてんきょう",
+    tags: [ "weapon", "catalyst" ],
+  },
+  {
+    en: "Reliquary of Truth",
+    ja: "真言の匣",
+    zhCN: "真语秘匣",
+    zhTW: "真語秘匣",
+    pronunciationJa: "しんげんのはこ",
     tags: [ "weapon", "catalyst" ],
   },
 ] as const satisfies SourceWord[];

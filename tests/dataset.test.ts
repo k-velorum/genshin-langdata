@@ -234,7 +234,7 @@ test("if property values of dictionary JSON complies the format.", async () => {
 });
 
 test("if the each translations do not include characters from the other languages", {
-  timeout: 90000
+  timeout: 20000
 }, async () => {
   type LangSpecificChars = {
     ja: string;
@@ -345,6 +345,7 @@ test("if the each translations do not include characters from the other language
     {
       ja: "緑",
       "zh-CN": "绿",
+      "zh-TW": "綠",
     },
     {
       ja: "約",
@@ -522,6 +523,11 @@ test("if the each translations do not include characters from the other language
       "zh-TW": "議",
     },
     {
+      ja: "語",
+      "zh-CN": "语",
+      "zh-TW": "語",
+    },
+    {
       ja: "謁",
       "zh-CN": "谒",
       "zh-TW": "謁",
@@ -636,6 +642,103 @@ test("if the each translations do not include characters from the other language
       "zh-CN": "卢",
       "zh-TW": "盧",
     },
+    {
+      ja: "達",
+      "zh-CN": "达",
+      "zh-TW": "達",
+    },
+    {
+      ja: "亜",
+      "zh-CN": "亚",
+      "zh-TW": "亞",
+    },
+    {
+      ja: "紀",
+      "zh-CN": "纪",
+      "zh-TW": "紀",
+    },
+    {
+      ja: "為",
+      "zh-CN": "为",
+      "zh-TW": "為",
+    },
+    {
+      ja: "動",
+      "zh-CN": "动",
+      "zh-TW": "動",
+    },
+    {
+      ja: "優",
+      "zh-CN": "优",
+      "zh-TW": "優",
+    },
+    {
+      ja: "門",
+      "zh-CN": "门",
+      "zh-TW": "門",
+    },
+    {
+      ja: "間",
+      "zh-CN": "间",
+      "zh-TW": "間",
+    },
+    {
+      ja: "厳",
+      "zh-CN": "严",
+      "zh-TW": "嚴",
+    },
+    {
+      ja: "飛",
+      "zh-CN": "飞",
+      "zh-TW": "飛",
+    },
+    {
+      ja: "蘭",
+      "zh-CN": "兰",
+      "zh-TW": "蘭",
+    },
+    {
+      ja: "馬",
+      "zh-CN": "马",
+      "zh-TW": "馬",
+    },
+    /*
+    {
+      ja: "険",
+      "zh-CN": "险",
+      "zh-TW": "險",
+    },
+    */
+    {
+      ja: "与",
+      "zh-CN": "与",
+      "zh-TW": "與",
+    },
+    {
+      ja: "堅",
+      "zh-CN": "坚",
+      "zh-TW": "堅",
+    },
+    {
+      ja: "双", // Note: 日本語でも「雙」を使うことはある。【例】雙津峡温泉
+      "zh-CN": "双",
+      "zh-TW": "雙",
+    },
+    {
+      ja: "園",
+      "zh-CN": "园",
+      "zh-TW": "園",
+    },
+    {
+      ja: "猫",
+      "zh-CN": "猫",
+      "zh-TW": "貓",
+    },
+    {
+      ja: "麗",
+      "zh-CN": "丽",
+      "zh-TW": "麗",
+    }
   ];
 
   for (const word of words) {
@@ -647,27 +750,51 @@ test("if the each translations do not include characters from the other language
       expect(word.zhTW).not.toMatch(/[ぁ-んァ-ヴー]/);
     }
 
-    for (const char of langSpecificChars) {
-      if (word.ja && word.zhCN) {
-        if (char.ja !== char["zh-CN"]) {
-          expect(word.ja).not.toContain(char["zh-CN"]);
-          expect(word.zhCN).not.toContain(char.ja);
-        }
-      }
+    if (word.ja) {
+      const nonJapaneseChars = [
+        ...langSpecificChars
+          .filter((char) => char["zh-CN"] !== char.ja)
+          .map((char) => char["zh-CN"]),
+        ...langSpecificChars
+          .filter((char) => char["zh-TW"] !== char.ja)
+          .map((char) => char["zh-TW"])
+          .filter((charZhTw) => charZhTw !== undefined),
+      ];
 
-      if (word.ja && word.zhTW) {
-        if (char.ja !== char["zh-TW"]) {
-          expect(word.ja).not.toContain(char["zh-TW"]);
-          expect(word.zhTW).not.toContain(char.ja);
-        }
-      }
+      expect(word.ja).not.toContain(
+        nonJapaneseChars.find(char => word.ja.includes(char))
+      );
+    }
 
-      if (word.zhCN && word.zhTW) {
-        if (char["zh-CN"] !== char["zh-TW"]) {
-          expect(word.zhCN).not.toContain(char["zh-TW"]);
-          expect(word.zhTW).not.toContain(char["zh-CN"]);
-        }
-      }
+    if (word.zhCN) {
+      const nonSimplifiedChineseChars = [
+        ...langSpecificChars
+          .filter((char) => char["zh-CN"] !== char.ja)
+          .map((char) => char.ja),
+        ...langSpecificChars
+          .filter((char) => char["zh-TW"] !== char["zh-CN"])
+          .map((char) => char["zh-TW"])
+          .filter((charZhTw) => charZhTw !== undefined),
+      ];
+
+      expect(word.zhCN).not.toContain(
+        nonSimplifiedChineseChars.find(char => word.zhCN.includes(char))
+      );
+    }
+
+    if (word.zhTW) {
+      const nonTraditionalChineseChars = [
+        ...langSpecificChars
+          .filter((char) => char["zh-TW"] && char["zh-TW"] !== char["zh-CN"])
+          .map((char) => char["zh-CN"]),
+        ...langSpecificChars
+          .filter((char) => char["zh-TW"] !== char.ja)
+          .map((char) => char.ja),
+      ];
+
+      expect(word.zhTW).not.toContain(
+        nonTraditionalChineseChars.find(char => word.zhTW.includes(char))
+      );
     }
   }
 });
@@ -686,7 +813,10 @@ test("if words are reverse-sorted by `updatedAt`", () => {
 test("if the characters specified in `pinyins.char` exists in `zhCN`", async () => {
   for (const word of words) {
     for (const { char } of (word.pinyins ?? [])) {
-      expect(word.zhCN.includes(char), `Cannot add pinyin to ${word.zhCN} because it does not include "${char}"`).toBe(true);
+      if (!word.zhCN) continue;
+      expect(
+        word.zhCN.includes(char),
+       `Cannot add pinyin to ${word.zhCN} because it does not include "${char}"`).toBe(true);
     }
   }
 });
