@@ -1224,4 +1224,28 @@ export default [
     notes: "天空の3つの月のひとつで、天理との戦争でも砕けずに残った。偽りの空により隠蔽されている",
     pronunciationJa: "そうげつ",
   },
+  {
+    en: "Different Phantoms",
+    ja: "虚影",
+    zhCN: "虚影",
+    zhTW: "虚影",
+    pronunciationJa: "きょえい",
+  },
+  {
+    en: "Irminsul Tree",
+    ja: "白銀の古樹",
+    zhCN: "银白古樹",
+    zhTW: "銀白古樹",
+    pronunciationJa: "はくぎんのこじゅ",
+    notes: "英語の綴り\"Irminsul\"は世界樹と同じ。放浪者の人形の体の材料に使われている",
+  },
+  {
+    en: "Soulblazers",
+    ja: "特戦隊",
+    zhCN: "特战队",
+    zhTW: "特戰隊",
+    pronunciationJa: "とくせんたい",
+    notesEn: "Comic book fan",
+    notes: "漫画好きのサークル",
+  },
 ] as const satisfies SourceWord[];

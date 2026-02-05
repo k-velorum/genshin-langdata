@@ -562,10 +562,10 @@ export default [
     notesZhTW: "魔女會代號 J。",
   },
   {
-    en: "Anya M. Andersdotter",
-    ja: "アンヤ・M・アンデシュドッテル",
-    zhCN: "安雅·M·安德斯多特",
-    zhTW: "安雅·M·安德斯多特",
+    en: "Anya \"Marie\" Andersdotter",
+    ja: "アンヤ・「マリ」・アンデシュドッテル",
+    zhCN: "安雅·「玛丽」·安德斯多特",
+    zhTW: "安雅·「瑪麗」·安德斯多特",
     tags: [ "mondstadt", "character-sub" ],
     notes: "魔女会・コードM。イノシシプリンセスの作者",
     notesZh: "魔女会代号 M。《野猪公主》的作者",
@@ -838,6 +838,14 @@ export default [
     notesZhTW: "「榮光之風」的店主。",
   },
   {
+    en: "Patton",
+    ja: "パットン",
+    zhCN: "巴顿",
+    zhTW: "巴頓",
+    tags: [ "mondstadt", "character-sub" ],
+    notes: "「エンジェルズシェア」の店員。v6.2(LunaIII) 期間限定イベント「魂を炎やす戦士の雪の旅」に登場するミニーの兄",
+  },
+  {
     en: "Callirhoe",
     ja: "カリロエー",
     zhCN: "卡莉露",
@@ -885,5 +893,13 @@ export default [
     tags: [ "mondstadt", "character-sub" ],
     notesEn: "Thoma's mother",
     notes: "トーマの母親",
+  },
+  {
+    en: "Sebas",
+    ja: "セバス",
+    zhCN: "赛巴斯",
+    zhTW: "賽巴斯",
+    tags: [ "mondstadt", "dragonspine", "character-sub" ],
+    notes: "世界任務「古き見識と新たな知恵」、「現世の題」に登場するキャラクター。レインドットの執事",
   },
 ] as const satisfies SourceWord[];
